@@ -26,20 +26,37 @@
 
     <div class="container" ng-controller="indexController">
 
-      <div class="starter-template">
-        <button class="btn btn-info" ng-click="getBalance()">Balance</button>
-        <br>
-        <span ng-bind="balance"></span>
+      
+      <br>
+      <button class="btn btn-info" ng-click="getBalance()">Balance</button>
+      <button class="btn btn-success" ng-click="getCounter()">get Counter</button>
+      <button class="btn btn-info" ng-click="getBalance()">Balance</button>
+      <br>
+      <br>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Endereço</th>
+            <th scope="col">Saldo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="w in wallets">
+            <th>{{w.address}}</th>
+            <td>{{w.balance}}</td>
+          </tr>
+        </tbody>
+      </table>
 
-        <hr>
+      <hr>
 
-        <pre>{{wallets | json}}</pre>
+      <span>Counter: {{counter}}</span>
 
-        <pre>{{balance | json}}</pre>
-
-        <pre>{{coinbase | json}}</pre>
+      <br>
+      <br>
+      <br>
+      <pre></pre>
         
-      </div>
 
     </div>
   </body>
