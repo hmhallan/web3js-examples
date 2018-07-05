@@ -8,18 +8,18 @@
 
     <title>Starter Template for Bootstrap</title>
 
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link href="vendor/bootstrap.min.css" rel="stylesheet">
+    
+    
+    <script src="vendor/jquery.min.js"></script>
+    <script src="vendor/bootstrap.min.js"></script>
+  
+    <script src="vendor/angular.min.js"></script>
 
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+    <script src="vendor/web3.min.js"></script>
 
     <script src="index.js"></script>
-
+    <script src="services.js"></script>
   </head>
 
   <body>
@@ -28,9 +28,18 @@
 
       
       <br>
-      <button class="btn btn-info" ng-click="getBalance()">Balance</button>
-      <button class="btn btn-success" ng-click="getCounter()">get Counter</button>
-      <button class="btn btn-info" ng-click="getBalance()">Balance</button>
+      <div class="row">
+        <div class="col-6">
+            <button class="btn btn-info" ng-click="getBalance()">Balance</button>
+            <button class="btn btn-success" ng-click="getCounter()">get Counter</button>
+            <button class="btn btn-warning" ng-click="increaseCounter()">increase Counter</button>
+        </div>
+        <div class="col-6">
+            <button class="btn btn-danger" ng-click="startMiner()">Start miner</button>
+            <button class="btn btn-warning" ng-click="stopMiner()">Stop miner</button>
+            <button class="btn btn-info" ng-click="checkPendingTransactions()">Check</button>
+        </div>
+    </div>
       <br>
       <br>
       <table class="table">
@@ -55,7 +64,7 @@
       <br>
       <br>
       <br>
-      <pre></pre>
+      <pre>{{txHash | json}}</pre>
         
 
     </div>
